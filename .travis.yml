@@ -15,15 +15,15 @@ common_sources: &all_sources
 matrix:
   include:
     # OSX Clang Builds
-    - os: osx
-      osx_image: xcode7.3
-      compiler: clang
-      env: COMPILER='clang++'
+    # - os: osx
+    #   osx_image: xcode7.3
+    #   compiler: clang
+    #   env: COMPILER='clang++'
 
-    - os: osx
-      osx_image: xcode8
-      compiler: clang
-      env: COMPILER='clang++'
+    # - os: osx
+    #   osx_image: xcode8
+    #   compiler: clang
+    #   env: COMPILER='clang++'
 
     - os: osx
       osx_image: xcode9
