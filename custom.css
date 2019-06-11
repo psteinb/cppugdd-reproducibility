@@ -1,0 +1,73 @@
+/* .reveal .slides { */
+/*   height: 100% !important; */
+/*   /\* top: 70% !important; *\/ */
+/*   margin-top: 0 !important; */
+/* } */
+
+/* .reveal .slides>section { */
+/*   min-height: 90% !important; */
+/*   top: auto !important; */
+/* } */
+
+/* .reveal .slides>section>section { */
+/*   min-height: 100% !important; */
+/*   top: auto !important; */
+/* } */
+
+.reveal section.title h1 {
+    margin-top: 1em;
+}
+
+.reveal section.title h2 {
+    margin-top: .2em;
+}
+
+.reveal h2 {
+    margin-top: .2em;
+}
+
+.reveal section.title p {
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: gray;
+}
+
+.graytext {
+
+    color: gray;
+
+}
+
+.L-text {
+
+    font-size: 1.1em !important;
+
+}
+
+.XL-text {
+
+    font-size: 1.2em !important;
+
+}
+
+.XXL-text {
+
+    font-size: 1.5em !important;
+
+}
+
+.text-right {
+
+    text-align: right !important;
+}
+
+.text-center {
+
+    text-align: center !important;
+}
+
+.text-left {
+
+    text-align: left !important;
+}
