@@ -40,14 +40,6 @@ matrix:
       compiler: gcc
       addons:
         apt:
-         sources: *all_sources
-         packages: ['g++-4.8']
-      env: COMPILER='g++-4.8'
-
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
           sources: *all_sources
           packages: ['g++-5']
       env: COMPILER='g++-5'
@@ -109,7 +101,7 @@ before_script:
   - ${CXX} --version
   - cd ${TRAVIS_BUILD_DIR}
   - pwd && ls
-  #incase is needed
+  #in case is needed
   #- cmake -Hcode/cpp/std_normal_distribution/ -BBuild-Debug -DCMAKE_BUILD_TYPE=Debug 
   - cmake -Hcode/cpp/std_normal_distribution/ -BBuild-Release -DCMAKE_BUILD_TYPE=Release
 
@@ -127,5 +119,5 @@ script:
   #   fi
   - # Go to release build
   - cd Build-Release
-  - cmake --build . --config Release
-  - CTEST_OUTPUT_ON_FAILURE=1 ctest -j 2
+  - VERBOSE=1 cmake --build . --config Release
+  - CTEST_OUTPUT_ON_FAILURE=1 ctest 
