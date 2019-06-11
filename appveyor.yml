@@ -1,0 +1,28 @@
+image:
+  - Visual Studio 2017
+  - Ubuntu
+
+platform:
+  - x86
+
+build:
+  project: code/cpp/std_normal_distribution
+  verbosity: minimal
+
+matrix:
+  fast_finish: true
+
+build_script:
+  - sh: pwd
+  - mkdir build
+  - cd build
+  - cmake ..
+  - cmake --build .
+
+test_script:
+  - sh: pwd
+  - mkdir build
+  - cd build
+  - cmake ..
+  - cmake --build .
+  - ctest
