@@ -7,7 +7,7 @@ prepare :
 	npm install decktape
 
 
-%.html : %.adoc references.adoc
+%.html : %.adoc #references.adoc
 	bundle exec asciidoctor-revealjs $<
 	sed -i -e '/.*controls: true.*/s/.*/&\n  hash: true,/' -e 's/height: 700/height: 1080/' $@
 
