@@ -95,7 +95,8 @@ install:
     elif [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then
         which cmake || brew install cmake;
     fi
-
+  - cmake --version
+  
 before_script:
   - export CXX=${COMPILER}
   - ${CXX} --version
