@@ -81,8 +81,8 @@ matrix:
       addons:
           apt:
               sources: *all_sources
-              packages: ['clang-6.0', 'libstdc++-8-dev']
-      env: COMPILER='clang++-6.0' 
+              packages: ['clang-7.0', 'libstdc++-8-dev']
+      env: COMPILER='clang++-7.0' 
 
 install:
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
@@ -93,7 +93,8 @@ install:
       mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
       export PATH=${DEPS_DIR}/cmake/bin:${PATH}
     elif [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then
-        which cmake || brew install cmake;
+        #which cmake ||
+	brew install cmake;
     fi
   - cmake --version
   
