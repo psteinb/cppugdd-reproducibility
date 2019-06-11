@@ -8,6 +8,7 @@ platform:
 build:
   project: code/cpp/std_normal_distribution
   verbosity: minimal
+  parallel: true
 
 matrix:
   fast_finish: false
@@ -21,14 +22,14 @@ build_script:
   - cd code/cpp/std_normal_distribution
   - mkdir build
   - cd build
-  - cmake -A%PLATFORM% -DCMAKE_BUILD_TYPE=%CONFIGURATION% ..
-  - cmake --build --config %CONFIGURATION% .
+  - cmake -A%PLATFORM% ..
+  - cmake --build . --config %CONFIGURATION%
 
 test_script:
   - sh: pwd
   - cd code/cpp/std_normal_distribution
   - mkdir build
   - cd build
-  - cmake -A%PLATFORM% -DCMAKE_BUILD_TYPE=%CONFIGURATION% ..
-  - cmake --build --config %CONFIGURATION% .
+  - cmake -A%PLATFORM% ..
+  - cmake --build . --config %CONFIGURATION%
   - ctest
