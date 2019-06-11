@@ -84,21 +84,6 @@ matrix:
               packages: ['clang-7', 'libstdc++-8-dev']
       env: COMPILER='clang++-7'
 
-     - os: linux
-      compiler: clang
-      addons:
-          apt:
-              sources: *all_sources
-              packages: ['clang-6.0', 'libstdc++-7-dev']
-      env: COMPILER='clang++-6.0' 
-
-    - os: linux
-      compiler: clang
-      addons:
-          apt:
-              sources: *all_sources
-              packages: ['clang-7', 'libstdc++-7-dev']
-      env: COMPILER='clang++-7' 
 
 install:
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
