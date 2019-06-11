@@ -22,9 +22,45 @@ C++ UG {date} +
 SLUB, Dresden, Germany +
 https://twitter.com/{my_twitter}[icon:twitter[] psteinb_] https://github.com/{my_github}[icon:github[] psteinb] + 
 
-== Disclaimer
+== Disclaimer(s)
+
+=== My Tasks at https://mpi-cbg.de[MPI CBG] / https://scionics.de[Scionics]
+
+image:x600px-MPI-CBG_building_outside_4pl.jpg[width=55%]
+
+[.XXL-text]
+Performance Engineering, HPC Cluster Support, Data Science/ML
+
+=== These Slides
+
+[.XXL-text]
+--
+icon:users[5x] icon:download[5x] +
+  + 
+For questions, concerns and feedback: +
+https://github.com/psteinb/cppugdd-reproducibility[github.com/psteinb/cppugdd-reproducibility]
+--
+
 
 == Why this talk?
+
+=== Project
+
+- C++ simulation
+- 10k line segments distributed within bounding box
+- attraction/repulsion, creation/destruction over time
+- legacy code base single-threaded
+- CI for Linux and Mac as target OS
+
+[.XXL-text]
+=== One fine day ...
+
+9am, CI reports:
+
+[%step]
+- Linux icon:check[role=lightgreen]  +
+- MacOS icon:times[role=red] +
+
 
 == Repro ... what?
 

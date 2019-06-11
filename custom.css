@@ -71,3 +71,61 @@
 
     text-align: left !important;
 }
+
+.reveal section.divide {
+  background-repeat: no-repeat;
+}
+
+.reveal .west {
+  position: fixed;
+  /* font-size: 2em; */
+  /* top: 49%; */
+  left: 10%;
+}
+
+
+.reveal .vmiddle {
+    position: fixed;
+    top: 49%;
+}
+
+.reveal .vmiddle-east {
+    position: fixed;
+    top: 49%;
+    right: 10%;
+}
+
+.reveal .vmiddle-west {
+    position: fixed;
+    top: 49%;
+    left: 10%;
+}
+
+.reveal .north {
+    position: fixed;
+    top: 10%;
+}
+
+.reveal .south {
+    position: fixed;
+    bottom: 10%;
+}
+
+.reveal .east {
+  position: fixed;
+  /* font-size: 2em; */
+  /* top: 49%; */
+  right: 10%;
+}
+
+.reveal .green {
+    color: green;
+}
+
+.reveal .lightgreen {
+    color: lightgreen;
+}
+
+.reveal .red {
+    color: red;
+}
