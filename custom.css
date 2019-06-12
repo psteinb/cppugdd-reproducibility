@@ -33,11 +33,6 @@
     color: gray;
 }
 
-.graytext {
-
-    color: gray;
-
-}
 
 .L-text {
 
@@ -60,6 +55,7 @@
 .text-right {
 
     text-align: right !important;
+    float: right;
 }
 
 .text-center {
@@ -70,6 +66,7 @@
 .text-left {
 
     text-align: left !important;
+    float: left;
 }
 
 .reveal section.divide {
@@ -121,6 +118,15 @@
 .reveal .green {
     color: green;
 }
+
+.reveal .black {
+    color: black;
+}
+
+.reveal .darkgrey {
+    color: darkgrey;
+}
+
 
 .reveal .lightgreen {
     color: lightgreen;

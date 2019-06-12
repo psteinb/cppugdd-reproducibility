@@ -15,6 +15,7 @@
 :revealjs_plugin_pdf: enabled #you run your presentation in a browser with ?print-pdf at the end of the URL, you can then use the default print function to print the slide deck into a PDF document.
 :customcss: custom.css
 :source-highlighter: highlightjs
+:source-linenums-option: true
 :stem:
 
 mailto:{my_email}[{my_name}] (https://www.mpi-cbg.de[MPI CBG], https://www.scionics.de[Scionics]) +
@@ -57,9 +58,49 @@ https://github.com/psteinb/cppugdd-reproducibility[github.com/psteinb/cppugdd-re
 
 image:CI_screenshot_cpp.png[width=85%]
 
-=== 2 days of
+[%notitle]
+=== two days!
 
+// https://www.pexels.com/de-de/foto/zoo-affe-affe-denken-33535/
 
+image::animal-ape-black-33535.jpg[background, size=cover]
+
+[.XL-text.text-center]
+=== A Reproducer!
+
+[source,c++]
+----
+#define CATCH_CONFIG_MAIN
+#include "catch2/catch.hpp"
+#include <random>
+
+TEST_CASE( "random numbers diced" ) {
+
+    //std::random_device rd{};
+    std::mt19937 gen{42};
+    std::normal_distribution<> d{5,2};
+
+    CHECK( d(gen) == Approx(3.8995310112) );
+}
+----
+
+[.XL-text.text-center]
+=== What is going on?
+
+[source,c++]
+----
+std::mt19937 gen{42};
+std::normal_distribution<> d{5,2};
+
+for( int i = 0;i<5;++i)
+     CHECK( d(gen) == Approx(???) );
+
+//Linux
+3.8995310112, 6.0308661394, 5.9477217113, 7.7369002444, 3.1663462535
+
+//MacOS
+6.0308661394, 3.8995310112, 7.7369002444, 5.9477217113, 4.7517056501
+----
 
 == Repro ... what?
 
