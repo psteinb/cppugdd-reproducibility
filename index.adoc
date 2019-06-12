@@ -52,14 +52,13 @@ https://github.com/psteinb/cppugdd-reproducibility[github.com/psteinb/cppugdd-re
 - legacy code base single-threaded
 - CI for Linux and Mac as target OS
 
-[.XXL-text]
+
 === One fine day ...
 
-9am, CI reports:
+image:CI_screenshot_cpp.png[width=85%]
 
-[%step]
-- Linux icon:check[role=lightgreen]  +
-- MacOS icon:times[role=red] +
+=== 2 days of
+
 
 
 == Repro ... what?
