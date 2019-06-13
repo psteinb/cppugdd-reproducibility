@@ -69,10 +69,10 @@ by https://www.flickr.com/photos/146269332@N03/47009867234/[Marco Verch]
 === Concrete Project
 
 - C++ simulation
-- 10k line segments distributed within bounding box
+- 10k actin filaments (line segments) distributed within bounding box
 - attraction/repulsion, creation/destruction over time
 - legacy code base single-threaded
-- CI for Linux and Mac as target OS
+- Linux and Mac as target OS
 
 [.XL-text]
 --
@@ -127,7 +127,7 @@ for( int i = 0;i<5;++i)
 ----
 
 [.XL-text]
-=== I must be the problem!
+=== I, the developer, must be the problem!
 
 "The most prominent example is the pseudorandom number generators used by digital computers in which knowing a starting "seed" number produces an entirely predictable string of numbers which are unpredictable without it."
 -- Wikipedia: {wikipedia-url-1}[Pseudorandomness]
@@ -203,10 +203,10 @@ a| icon:check[role=lightgreen]
 
 === Text Mining
 
-- my reference: https://github.com/cplusplus/draft/tree/c++17[CPP ISO Draft]
-- pdf document yields 1499 pages
-- generated from `.tex` files (127002 LOC)
-- used git-tag `c++17`
+* my reference: https://github.com/cplusplus/draft/tree/c++17[CPP ISO Draft] from https://github.com/cplusplus/draft[github]
+* used git-branch `c++17`
+* 46 `.tex` files (127002 LOC)
+* generates pdf document (1499 pages)
 
 [.XL-text]
 === Extracting Implementation Defined
@@ -233,10 +233,11 @@ of the specified distributions are
 ** code available at https://github.com/psteinb/mining-cpp17-standard.git[github.com/psteinb/mining-cpp17-standard.git]
 
 [.XL-text]
-=== Occurrence of Impldefs
+=== Occurrences of `\impldef`
 
-- 212 `impldef` statements scattered throughout
-- 123 `impldef` inside `std` library `.tex` files
+- 212 `impldef` statements total
+- 123 `impldef` inside `std` library `.tex` files +
+(basis for this talk)
 
 [.XL-text]
 === Occurrence by File
@@ -272,7 +273,7 @@ image::impldef_by_sec1_stem_time_hilitd.svg[width=90%]
 
 === Observations `time`
 
-"It is \\impldef{whether values are rounded or truncated to the required precision when converting between `time_t`"
+"It is \impldef{whether values are rounded or truncated to the required precision when converting between `time_t`"
 -- https://github.com/cplusplus/draft/blob/c%2B%2B17/source/utilities.tex#L18941[utilities.tex:18941]
 
 === Keyword `rand`
@@ -282,19 +283,19 @@ image::impldef_by_sec1_stem_rand_hilitd.svg[width=90%]
 === Observations `rand`
 
 [%step]
-* "The choice of engine type named by `default_random_engine` is `\impldef{type of `default_random_engine`}`."
--- https://github.com/cplusplus/draft/blob/c%2B%2B17/source/numerics.tex#L3781[numerics.tex:3781]
-* "A value of an \impldef{exception type when `random_device` constructor fails} type"
--- https://github.com/cplusplus/draft/blob/c%2B%2B17/source/numerics.tex#L3871[numerics.tex:3871]
-* "It is \impldef{how `random_device::operator()` generates values} how these values are generated."
--- https://github.com/cplusplus/draft/blob/c%2B%2B17/source/numerics.tex#L3906[numerics.tex:3906]
+* "The choice of engine type named by `default_random_engine` is `\impldef{type of `default_random_engine`}`." +
+https://github.com/cplusplus/draft/blob/c%2B%2B17/source/numerics.tex#L3781[numerics.tex:3781]
+* "A value of an \impldef{exception type when `random_device` constructor fails} type" + 
+https://github.com/cplusplus/draft/blob/c%2B%2B17/source/numerics.tex#L3871[numerics.tex:3871]
+* "It is \impldef{how `random_device::operator()` generates values} how these values are generated." +
+https://github.com/cplusplus/draft/blob/c%2B%2B17/source/numerics.tex#L3906[numerics.tex:3906]
 
 === Miscellaneous Observations
 
-- "The value returned for `pow(0, 0)` is \impldef{value of `pow(0,0)`}."
--- https://github.com/cplusplus/draft/blob/c%2B%2B17/source/numerics.tex#L1198[numerics.tex:1198]
-- 8 times statements like "The value/type of exception thrown by X is \impldef ...."
--- `lib-intro.tex`, 2 `support.tex`, 3 `utilities.tex`, 2 `numerics.tex`
+- "The value returned for `pow(0, 0)` is \impldef{value of `pow(0,0)`}." +
+https://github.com/cplusplus/draft/blob/c%2B%2B17/source/numerics.tex#L1198[numerics.tex:1198]
+- 8 times statements like "The value/type of exception thrown by X is \impldef ...." +
+  `lib-intro.tex`, 2 `support.tex`, 3 `utilities.tex`, 2 `numerics.tex`
 
 == Summary
 
@@ -303,14 +304,16 @@ image::impldef_by_sec1_stem_rand_hilitd.svg[width=90%]
 
 [%step]
 * cross-platform development is hard (in any programming language)
-* it appears to be even harder by support of the C++ standard (implementation-defined)
+* it appears to be even harder in C++ by support of the C++ standard (implementation-defined)
 * implementation-defined means work for a developer
 ** more work developing
 ** less fun using C++
 
-=== Homework
+
+[.XL-text]
+=== Homework?
 
 "Re-run, Repeat, Reproduce, Reuse, Replicate: Transforming Code into Scientific Contributions"
--- Fabien C. Y. Benureau and ￼Nicolas P. Rougier, 2018, https://www.frontiersin.org/articles/10.3389/fninf.2017.00069/full[Frontiers in Neuroinformatics]
+-- Benureau et al (https://www.frontiersin.org/articles/10.3389/fninf.2017.00069/full[Frontiers in Neuroinformatics] 2018)
 
-** Is this possible in C++? Cross-Platform and Fast! **
+**Is this possible in C++? Cross-Platform and Fast!**
